@@ -93,10 +93,12 @@ echo "<div class=tt><table><tr>";
   <div class="mdl-grid">
   <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet"></div>
   <div class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet">
-  <b>Electives:</b><label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="hselec">
-  <input type="checkbox" id="hselec" class="mdl-checkbox__input hselec">
-  <span class="mdl-checkbox__label">HS106</span>
+  
+<label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="hselec">
+  <input type="checkbox" id="hselec" class="mdl-switch__input hselec">
+  <span class="mdl-switch__label">HS106</span>
 </label>
+
 </div>
   <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-phone"></div>
 </div>
