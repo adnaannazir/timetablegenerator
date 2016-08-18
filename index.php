@@ -120,14 +120,12 @@ h4,h1{color:white;}
   M.Tech.
 </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br>
     <div class="fb-like" data-href="https://timetable-generator.herokuapp.com/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
     
 <!--<div class="fb-share-button" data-href="https://timetable-generator.herokuapp.com/" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%2Flearning%2Ftime%2Ftime-table-generator%2Findex.php&amp;src=sdkpreparse">Share</a></div>-->
 
    <!--<div class="fb-comments" data-href="https://timetable-generator.herokuapp.com/" data-numposts="5"></div>-->
-   <br><br><br><br>
-    
     </div>
   </main>
   <div id="background"></div>
