@@ -29,7 +29,7 @@
          option {text-align:center;}
          tr,td,th{font-size:20px;border:2px solid purple;}
          .small{width:15%;height:15%;}
-         .tt{border:17px solid green;border-radius: 15px;margin:auto;padding:0px;width:70%;}
+         .tt{border:17px solid green;border-radius: 15px;margin:auto;padding:0px;width:70%;overflow:auto;}
          .mdl-navigation{color:black;}
          #headl{color:white;font-size:22px;}
 
