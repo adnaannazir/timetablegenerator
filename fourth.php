@@ -9,15 +9,15 @@ $time = array
  $days =array( "Monday","Tuesday","Wednesday","Thursday","Friday");
 $ftime = array
   (
-  array("<div class=\"A3 A4\"></div>","<div class=\"B3 B4\"></div>","<div class=\"C3 C4\"></div>","<div class=\"D3 D4\"></div>","L","<div class=\"G3 G4\"></div>","<div class=\"I3 I4\"></div><div class=L1></div>","<div class=L1></div>","<div class=L1></div>","",""),
+  array("<div class=\"A3 A4 co\"></div>","<div class=\"B3 B4 co\"></div>","<div class=\"co C3 C4\"></div>","<div class=\"co D3 D4\"></div>","L","<div class=\"co G3 G4\"></div>","<div class=\"co I3 I4\"></div><div class=\"L1 co\"></div>","<div class=\"L1 co\"></div>","<div class=\"L1 co\"></div>","",""),
   
-  array("<div class=\"E3 E4\"></div>","<div class=\"F3 F4\"></div>","<div class=\"G3 G4\"></div>","<div class=\"I3 I4\"></div>","U","<div class=A4></div>","<div class=L2></div><div class=C4></div>","<div class=L2></div>","<div class=L2></div>","",""),
+  array("<div class=\"E3 E4 co\"></div>","<div class=\"F3 F4 co\"></div>","<div class=\"G3 G4 co\"></div>","<div class=\"co I3 I4\"></div>","U","<div class=\"A4 co\"></div>","<div class=\"L2 co\"></div><div class=\"C4 co\"></div>","<div class=\"L2 co\"></div>","<div class=\"L2 co\"></div>","",""),
   
-  array("<div class=\"B3 B4\"></div>","<div class=\"C3 C4\"></div>","<div class=\"D3 D4\"></div>","<div class=\"A3 A4\"></div>","N","<div class=\"F3 F4\"></div>","<div class=L3></div><div class=G4></div>","<div class=L3></div><div class=E4></div>","<div class=L3></div><div class=I4></div>","",""),
+  array("<div class=\"B3 B4 co\"></div>","<div class=\"C3 C4 co\"></div>","<div class=\"D3 D4 co\"></div>","<div class=\"A3 A4 co\"></div>","N","<div class=\"F3 F4 co\"></div>","<div class=\"L3 co\"></div><div class=\"G4 co\"></div>","<div class=\"L3 co\"></div><div class=\"E4 co\"></div>","<div class=\"L3 co\"></div><div class=\"I4 co\"></div>","",""),
 
-  array("<div class=\"F3 F4\"></div>","<div class=\"E3 E4\"></div>","<div class=\"I3 I4\"></div>","<div class=\"G3 G4\"></div>","C","<div class=D4></div>","<div class=L4></div><div class=B4></div>","<div class=L4></div>","<div class=L4></div>","","") ,
+  array("<div class=\"F3 F4 co\"></div>","<div class=\"E3 E4 co\"></div>","<div class=\"I3 I4 co\"></div>","<div class=\"G3 G4 co\"></div>","C","<div class=\"D4 co\"></div>","<div class=\"L4 co\"></div><div class=\"B4 co\"></div>","<div class=\"L4 co\"></div>","<div class=\"L4 co\"></div>","","") ,
 
-  array("<div class=\"C3 C4\"></div>","<div class=\"D3 D4\"></div>","<div class=\"A3 A4\"></div>","<div class=\"B3 B4\"></div>","H","<div class=\"E3 E4\"></div>","<div class=F4></div><div class=L5></div>","<div class=L5></div>","<div class=L5></div>","","")
+  array("<div class=\"C3 C4 co\"></div>","<div class=\"D3 D4 co\"></div>","<div class=\"A3 A4 co\"></div>","<div class=\"B3 B4 co\"></div>","H","<div class=\"E3 E4 co\"></div>","<div class=\"F4 co\"></div><div class=\"L5 co\"></div>","<div class=\"L5 co\"></div>","<div class=\"L5 co\"></div>","","")
   );?>
 <?php
 $courses=array(
@@ -153,6 +153,11 @@ $courses=array(
   <link rel="stylesheet" type="text/css" href="content/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <script type="text/javascript" src=js/send.js></script>
+  <!--<script src="tipuedrop/tipuedrop_content.js"></script>
+<link href="tipuedrop/tipuedrop.css" rel="stylesheet">
+<script src="tipuedrop/tipuedrop.js"></script>-->
+
+  <script type="text/javascript" src=jquery-ui.min.js></script>
   <link rel="stylesheet" type="text/css" href="design1.css">
   <style type="text/css">
   		 .tt{width:90%;}
@@ -186,6 +191,7 @@ $courses=array(
 	       echo "<option class=".$courses[$i][1]." value=".$courses[$i][0].">".$courses[$i][0]."</option>";
     echo "</select><br></div>";
   	?>
+
       </nav>
     </div>
   </header>
@@ -201,7 +207,12 @@ $courses=array(
   </div>
   <main class="mdl-layout__content">
     <div class="page-content"><!-- Your content goes here -->
-   <br><br><br><br>
+   <!--<form name="search" action="search.php">
+<input type="text" id="tipue_drop_input" name="q" autocomplete="off" required>
+</form>
+<div id="tipue_drop_content"></div>
+<input type="text" id=srch>
+   --><br><br><br><br>
    
   <div class=container>
 
@@ -240,6 +251,13 @@ $courses=array(
 <li>CS207 Theory class is on thursday 1-2 PM</li>
   </ol>
   </div>
+  <datalist id="suggestions">
+    <option value="Black">1
+    <option value="Red">1
+    <option value="Green">1
+    <option value="Blue">1
+    <option value="White">1
+</datalist>
     </div>
   </main>
 </div>
@@ -249,6 +267,22 @@ $courses=array(
 
 
 <script>
+$(document).ready(function(){
+	//$('.co').droppable(//{drop:function(){
+	//$(this).html(contents+' ');	
+	//}});
+	$('.co').draggable({start:function(){
+		contents=$(this).text();
+		
+	}
+
+});
+});
+//$(document).ready(function() {
+  //   $('#tipue_drop_input').tipuedrop();
+//});
+
+
 
 $('#clist').change(function(){
 	var copt=$('#clist option:selected').val()
