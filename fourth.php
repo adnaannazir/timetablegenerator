@@ -153,10 +153,12 @@ $courses=array(
   <link rel="stylesheet" type="text/css" href="content/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <script type="text/javascript" src=js/send.js></script>
-  <link rel="stylesheet" type="text/css" href="design.css">
+  <link rel="stylesheet" type="text/css" href="design1.css">
   <style type="text/css">
-  		 .tt{width:105%;}
+  		 .tt{width:90%;}
+         .
          </style>
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://code.getmdl.io/1.2.0/material.indigo-pink.min.css">
 <script defer src="https://code.getmdl.io/1.2.0/material.min.js"></script>
@@ -199,24 +201,23 @@ $courses=array(
   </div>
   <main class="mdl-layout__content">
     <div class="page-content"><!-- Your content goes here -->
-   <div class=jumbotron><br><h2><img src=logo_iit1.png class=small>B.Tech. and M.Tech.</h2><h3>
-  	II<sup>nd</sup>,III<sup>rd</sup>, IV<sup>th</sup> Year and M.Tech.
-  </h3></div> 		
+   <br><br><br><br>
+   
   <div class=container>
 
   	<div id=crss>
   	</div>
   	<?php
 
- echo "<div class=tt><table class=\"table-responsive table-hover\"><tr>";  
+ echo "<div class=tt><table class=\"mdl-data-table mdl-js-data-table mdl-data-table mdl-shadow--2dp\"><tr>";  
   for($i=0;$i<10;$i++)
-    echo "<th>".$time[$i]."</th>";
+    echo "<th class=\"mdl-data-table__cell--non-numeric\">".$time[$i]."</th>";
    echo "</tr>";
 
   for($i=0;$i<5;$i++)
-    { echo "<tr><th>".$days[$i]."</th>";
+    { echo "<tr><th class=\"mdl-data-table__cell--non-numeric\">".$days[$i]."</th>";
       for($j=0;$j<9;$j++){
-        echo "<td>".$ftime[$i][$j]."</td>";
+        echo "<td class=\"mdl-data-table__cell--non-numeric\">".$ftime[$i][$j]."</td>";
       }
     echo "</tr>";
       
@@ -258,7 +259,7 @@ $('#clist').change(function(){
 		{
 			$('#crss').append("<span class=\"mdl-chip mdl-chip--deletable\" > <span class=\"mdl-chip__text\">"+copt+"</span><button type=\"button\" class=\"mdl-chip__action \" data="+slot+" contained="+copt+"><i class=\"material-icons\">cancel</i></button></span>");
 	var x=$("."+slot).not("option").html();
-	if(x!="") snackbarContainer.MaterialSnackbar.showSnackbar({message:'Clash Happened'});
+	if(x!="") snackbarContainer.MaterialSnackbar.showSnackbar({message:'Clash Happened between '+x+' and '+copt+' '});
 	$("."+slot).not("option").html(""+copt);
 
 	'use strict';

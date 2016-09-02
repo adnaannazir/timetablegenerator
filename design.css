@@ -1,10 +1,10 @@
         *{font-family:'Open Sans',sans-serif;}        
         a,a:hover,a:visited,a:link{text-decoration:none;color:black;}
         
-        tr,th,td{text-align: center;margin:0px;border:2px solid black;}
+        tr,th,td{text-align: center;margin:0px;}
 			td,th{padding:7px;}
 		
-         table{border-collapse: collapse;margin:0px;}
+         table{margin:0px;}
         
         .L1{padding-left:15px;padding-right:15px;}
         .L2{padding-left:15px;padding-right:15px;}

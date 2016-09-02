@@ -23,13 +23,13 @@ $ftime = array
   <meta charset="utf-8">
   <title>Timetable Generator</title>
   <script type="text/javascript" src=js/jquery.min.js></script>
-  <link rel="stylesheet" type="text/css" href="design.css">
+  
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://code.getmdl.io/1.2.0/material.indigo-pink.min.css">
 <script defer src="https://code.getmdl.io/1.2.0/material.min.js"></script>
-<link rel="stylesheet" type="text/css" href="design.css">
+<link rel="stylesheet" type="text/css" href="design1.css">
 <style type="text/css">
-    
+        table {margin-left:100px}
          
          input{margin-right:300px;}
 </style>
@@ -68,22 +68,20 @@ $ftime = array
   <main class="mdl-layout__content">
     <div class="page-content"><!-- Your content goes here -->
     
-    <div class=jumbotron><br><br><h2><img src=logo_iit1.png class=small> B. Tech.</h2>
-    I<sup>st</sup> Year
-    </div>
+  
 
 <br>
 <br><br>
   <?php
-echo "<div class=tt><table><tr>";  
+echo "<div class=tt><table class=\"mdl-data-table mdl-js-data-table mdl-data-table mdl-shadow--2dp\"><tr>";  
   for($i=0;$i<9;$i++)
-    echo "<th>".$time[$i]."</th>";
+    echo "<th class=\"mdl-data-table__cell--non-numeric\">".$time[$i]."</th>";
    echo "</tr>";
 
   for($i=0;$i<5;$i++)
-    { echo "<tr><th>".$days[$i]."</th>";
+    { echo "<tr><th class=\"mdl-data-table__cell--non-numeric\">".$days[$i]."</th>";
       for($j=0;$j<8;$j++){
-        echo "<td>".$ftime[$i][$j]."</td>";
+        echo "<td class=\"mdl-data-table__cell--non-numeric\">".$ftime[$i][$j]."</td>";
       }
     echo "</tr>";
       
