@@ -91,7 +91,7 @@ h4,h1{color:white;}
   </div>
   <div class="mdl-card__menu">
     
-      <a  target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%2Flearning%2Ftime%2Ftime-table-generator%2Findex.php" id=shr1><button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" id=shr><i class="material-icons">share</i></button></a>
+      <a  target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftimetable-generator.herokuapp.com" id=shr1><button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" id=shr><i class="material-icons">share</i></button></a>
       
     
   </div>

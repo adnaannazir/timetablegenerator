@@ -156,18 +156,26 @@ $courses=array(
   <!--<script src="tipuedrop/tipuedrop_content.js"></script>
 <link href="tipuedrop/tipuedrop.css" rel="stylesheet">
 <script src="tipuedrop/tipuedrop.js"></script>-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="src/jquery-customselect.js"></script>
+<link href="src/jquery-customselect.css" rel="stylesheet">
 
   <script type="text/javascript" src=jquery-ui.min.js></script>
   <link rel="stylesheet" type="text/css" href="design1.css">
   <style type="text/css">
   		 .tt{width:90%;}
-         .
+
+         nav{color: black;}
          </style>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://code.getmdl.io/1.2.0/material.indigo-pink.min.css">
 <script defer src="https://code.getmdl.io/1.2.0/material.min.js"></script>
-
+<script type="text/javascript">
+	$(function() {
+        $("#demo").customselect();
+      });
+</script>
   </head>
   <body>
 
@@ -186,7 +194,7 @@ $courses=array(
         <a class="mdl-navigation__link" href="">Link</a>
         <a class="mdl-navigation__link" href="">Link</a>-->
         <?php
-  	echo "<div><!--<div id=headl>List of courses</div>--><select id=clist class=form-control>";
+  	echo "<div><!--<div id=headl>List of courses</div>--><select id=demo class=custom-select name=standard>";
 	for($i=0;$i<96;$i++)
 	       echo "<option class=".$courses[$i][1]." value=".$courses[$i][0].">".$courses[$i][0]."</option>";
     echo "</select><br></div>";
@@ -207,6 +215,7 @@ $courses=array(
   </div>
   <main class="mdl-layout__content">
     <div class="page-content"><!-- Your content goes here -->
+    
    <!--<form name="search" action="search.php">
 <input type="text" id="tipue_drop_input" name="q" autocomplete="off" required>
 </form>
@@ -251,13 +260,6 @@ $courses=array(
 <li>CS207 Theory class is on thursday 1-2 PM</li>
   </ol>
   </div>
-  <datalist id="suggestions">
-    <option value="Black">1
-    <option value="Red">1
-    <option value="Green">1
-    <option value="Blue">1
-    <option value="White">1
-</datalist>
     </div>
   </main>
 </div>
@@ -267,14 +269,17 @@ $courses=array(
 
 
 <script>
+
 $(document).ready(function(){
 	//$('.co').droppable(//{drop:function(){
 	//$(this).html(contents+' ');	
 	//}});
+
 	$('.co').draggable({start:function(){
 		contents=$(this).text();
 		
 	}
+	,containment:'table'
 
 });
 });
@@ -284,9 +289,9 @@ $(document).ready(function(){
 
 
 
-$('#clist').change(function(){
-	var copt=$('#clist option:selected').val()
-	var slot=$('#clist option:selected').attr('class');
+$('#demo').change(function(){
+	var copt=$('#demo option:selected').val()
+	var slot=$('#demo option:selected').attr('class');
 	var snackbarContainer = document.querySelector('#demo-toast-example');
   	var showToastButton = document.querySelector('#clist');
 	if(copt!= "Select") 
@@ -297,10 +302,10 @@ $('#clist').change(function(){
 	$("."+slot).not("option").html(""+copt);
 
 	'use strict';
-    var copt=$('#clist option:selected').val()
+    var copt=$('#demo option:selected').val()
     var data = {message: 'Added Course '+copt};
     snackbarContainer.MaterialSnackbar.showSnackbar(data);
-    $('#clist').val("Select");
+    $('#demo').val("Select");
 }
 	//$('#clist option[value="'+copt+'"]').remove();
 });
@@ -317,7 +322,7 @@ $("."+slot).not("option").html("");
 //$("span[data="+slot+"]"]).html(" ");
 
   var snackbarContainer = document.querySelector('#demo-toast-example');
-  var showToastButton = document.querySelector('#clist');
+  var showToastButton = document.querySelector('#demo');
 	'use strict';
     $(this).parent().remove();
     var data = {message: 'Removed Course '+copt};
