@@ -296,13 +296,13 @@ $('#demo').change(function(){
   	var showToastButton = document.querySelector('#clist');
 	if(copt!= "Select") 
 		{
-			$('#crss').append("<span class=\"mdl-chip mdl-chip--deletable\" > <span class=\"mdl-chip__text\">"+copt+"</span><button type=\"button\" class=\"mdl-chip__action \" data="+slot+" contained="+copt+" typ=\"main\"><i class=\"material-icons\">cancel</i></button></span>");
+			$('#crss').hide().append("<span class=\"mdl-chip mdl-chip--deletable\" > <span class=\"mdl-chip__text\">"+copt+"</span><button type=\"button\" class=\"mdl-chip__action \" data="+slot+" contained="+copt+" typ=\"main\"><i class=\"material-icons\">cancel</i></button></span>").fadeIn();
 	
 	var x=$("."+slot).not("option").html();
 	var cont=$("."+slot+":last").not("option").children().attr("cont");
 	if(x!="") snackbarContainer.MaterialSnackbar.showSnackbar({message:'Clash Happened between '+cont+' and '+copt+' '});
 	
-	$("."+slot).not("option").html("<span class=\"mdl-chip mdl-chip--deletable\" cont="+copt+"> <span class=\"mdl-chip__text\">"+copt+"</span><button type=\"button\" class=\"mdl-chip__action \" data="+slot+" contained="+copt+" typ=\"ind\"><i class=\"material-icons\">cancel</i></button></span>");
+	$("."+slot).not("option").hide().html("<span class=\"mdl-chip mdl-chip--deletable\" cont="+copt+"> <span class=\"mdl-chip__text\">"+copt+"</span><button type=\"button\" class=\"mdl-chip__action \" data="+slot+" contained="+copt+" typ=\"ind\"><i class=\"material-icons\">cancel</i></button></span>").fadeIn();
 
 	'use strict';
     var copt=$('#demo option:selected').val()
